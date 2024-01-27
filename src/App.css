@@ -1,0 +1,28 @@
+nav{
+  background-color: rgb(216, 87, 87);
+  height: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; 
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.button {
+background-color: gainsboro;
+margin-left: 10px;
+margin-right: 10px;
+font-size: xx-large;
+border-radius: 8%;
+border-width: medium;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-weight: bold;
+color: rgb(79, 31, 31);
+border-color: rgb(79, 31, 31);
+transition: background-color 0.2s ease; 
+box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover {
+  background-color: white; 
+  transform: scale(1.1);
+}
