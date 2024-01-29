@@ -1,3 +1,4 @@
+
 import NavBar from "../../navBar/NavBar";
 // import FriendComponent from "../../components/FriendComponent";
 import HomeHobby from "../../components/HomeHobby";
