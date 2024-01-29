@@ -1,6 +1,6 @@
 const FriendComponent = ({name}) => {
     return(
-        <div>Friend: {name}</div>
+        <button className="friend">{name}</button>
     )
 }
 
