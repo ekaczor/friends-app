@@ -3,6 +3,7 @@ import NavBar from "../../navBar/NavBar";
 import HobbyCard from "./HobbyCard";
 import mockHobbies from "./MockHobbies";
 
+//Need to make the My Hobbies a scroll container for when the api is used.
 const HobbiesPage = ({hobbies}) => {
   return (
     <div className="home-body">
