@@ -2,6 +2,7 @@ import NavBar from "../../navBar/NavBar";
 // import FriendComponent from "../../components/FriendComponent";
 import HomeHobby from "../../components/HomeHobby";
 import { useNavigate } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 //I think that I want to give the user the ability to add a hobby
 const HomePage = () => {
@@ -29,6 +30,7 @@ const HomePage = () => {
           friends. Ready to bring your interests to life and connect with
           friends who share your zest for life?
         </h3>
+        <div><SearchBar/></div>
         <div onClick={navigateToHobbiesPage}>
           <HomeHobby />
         </div>
