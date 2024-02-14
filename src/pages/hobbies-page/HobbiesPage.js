@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "../../navBar/NavBar";
 import HobbyCard from "./HobbyCard";
 import mockHobbies from "./MockHobbies";
-import './hobby_style.css'
+import './hobby_style.css';
 
 //Need to make the My Hobbies a scroll container for when the api is used.
 const HobbiesPage = ({hobbies}) => {
