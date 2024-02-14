@@ -1,0 +1,39 @@
+.Hobby-page {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .my-hobbies {
+    padding-top: 20px;
+    color: rgb(79, 31, 31);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(255, 18, 18, 0.276);
+    height: 90vh;
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: x-large;
+    overflow: auto;
+  }
+  
+  .hobby-info {
+    color: rgb(79, 31, 31);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-align: center;
+    font-size: x-large;
+  }
+  
+  .hobby-card {
+    font-size: medium;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .hobby-card:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    color: white;
+  }

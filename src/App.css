@@ -1,6 +1,6 @@
 nav{
   background-color: rgb(216, 87, 87);
-  height: 70px;
+  height: 10vh;
   display: flex;
   justify-content: flex-end;
   align-items: center; 
@@ -50,7 +50,7 @@ box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.3);
 
 .home-body{
   background-color: bisque;
-  height: 100vh;
+  height: 100%;
 }
 
 .home-info{
@@ -109,41 +109,25 @@ box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.3);
   min-width: 550px;
 }
 
-.Hobby-page {
-  display: flex;
-  justify-content: space-between;
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.my-hobbies {
-  padding-top: 20px;
-  color: rgb(79, 31, 31);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: bold;
-  text-align: center;
-  background-color: rgba(255, 18, 18, 0.276);
-  height: 100vh;
-  box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  font-size: x-large;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
 }
 
-.hobby-info {
-  color: rgb(79, 31, 31);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: bold;
-  text-align: center;
-  text-align: center;
-  font-size: x-large;
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(216, 87, 87); 
+  border: solid 1px;
+  border-color: white;
 }
 
-.hobby-card {
-  font-size: medium;
-  margin-left: 20px;
-  margin-right: 20px;
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(79, 31, 31); 
 }
 
-.hobby-card:hover {
-  transform: scale(1.2);
-  cursor: pointer;
-  color: white;
-}
