@@ -7,7 +7,6 @@
   font-size: large;
   border-color: rgb(79, 31, 31);
   border-width: 3px;
-
   box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -24,11 +23,9 @@
 .searchButton:hover {
   background-color: rgb(216, 183, 183);
   cursor: pointer;
-
   transform: scale(1.1);
 }
 
 .wholeSearch {
-    padding-bottom: 20px;
-
+    padding-bottom: 25px;
 }
