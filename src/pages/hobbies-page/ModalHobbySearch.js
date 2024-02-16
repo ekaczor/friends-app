@@ -5,7 +5,9 @@ const ModalHobbySearch = ({ onSearch }) => {
   const [query, setQuery] = useState("");
 
   const handleChange = (event) => {
-    setQuery(event.target.value);
+    const { value } = event.target;
+    setQuery(value);
+    onSearch(value); // Update the parent component with the new query value
   };
 
   const handleSubmit = (event) => {

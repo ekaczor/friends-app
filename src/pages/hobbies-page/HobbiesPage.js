@@ -1,20 +1,30 @@
 import React, { useState } from "react";
 import NavBar from "../../navBar/NavBar";
 import HobbyCard from "./HobbyCard";
-import mockHobbies from "./MockHobbies";
+import Hobbies from "./Hobbies";
 import "./hobby_style.css";
 import ModalHobbySearch from "./ModalHobbySearch";
 
 const HobbiesPage = () => {
-  const [hobbies, setHobbies] = useState(mockHobbies);
+  const [hobbies, setHobbies] = useState(Hobbies);
   const [showModal, setShowModal] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const addNewHobby = (selectedHobby) => {
     setHobbies([...hobbies, selectedHobby]);
-    setShowModal(false); // Close the modal after adding a new hobby
+    setShowModal(false);
+    setSearchQuery("");
   };
 
   const sortedHobbies = hobbies.slice().sort((a, b) => a.name.localeCompare(b.name));
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+
+  const filteredHobbies = hobbies.filter((hobby) =>
+    hobby.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="hobby-body">
@@ -34,19 +44,19 @@ const HobbiesPage = () => {
         <div className="hobby-info">Hobby info</div>
         {showModal && (
           <div>
-          <div className="modal">
-          <button className= "exit" onClick={() => setShowModal(false)}>&times;</button>
-          <ModalHobbySearch/>
-            <div className="modal-content">
-              <ul>
-                {mockHobbies.map((hobby) => (
+            <div className="modal">
+              <button className="exit" onClick={() => {setShowModal(false); setSearchQuery("")}}>
+                &times;
+              </button>
+              <ModalHobbySearch onSearch={handleSearch} />
+              <div className="modal-content">
+                {filteredHobbies.map((hobby) => (
                   <div className="choice" key={hobby.id} onClick={() => addNewHobby(hobby)}>
                     {hobby.name}
                   </div>
                 ))}
-              </ul>
+              </div>
             </div>
-          </div>
           </div>
         )}
       </div>
