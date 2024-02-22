@@ -6,25 +6,17 @@ import "./hobby_style.css";
 import ModalHobbySearch from "./ModalHobbySearch";
 
 const HobbiesPage = () => {
-  const [hobbies, setHobbies] = useState(Hobbies);
+  const [selectedHobbies, setSelectedHobbies] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
 
-  const addNewHobby = (selectedHobby) => {
-    setHobbies([...hobbies, selectedHobby]);
+  const handleAddHobby = (hobby) => {
+    if (!selectedHobbies.includes(hobby)) {
+      setSelectedHobbies([...selectedHobbies, hobby]);
+    }
     setShowModal(false);
-    setSearchQuery("");
   };
 
-  const sortedHobbies = hobbies.slice().sort((a, b) => a.name.localeCompare(b.name));
-
-  const handleSearch = (query) => {
-    setSearchQuery(query);
-  };
-
-  const filteredHobbies = hobbies.filter((hobby) =>
-    hobby.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const sortedHobbies = selectedHobbies.slice().sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <div className="hobby-body">
@@ -43,21 +35,11 @@ const HobbiesPage = () => {
         </div>
         <div className="hobby-info">Hobby info</div>
         {showModal && (
-          <div>
-            <div className="modal">
-              <button className="exit" onClick={() => {setShowModal(false); setSearchQuery("")}}>
-                &times;
-              </button>
-              <ModalHobbySearch onSearch={handleSearch} />
-              <div className="modal-content">
-                {filteredHobbies.map((hobby) => (
-                  <div className="choice" key={hobby.id} onClick={() => addNewHobby(hobby)}>
-                    {hobby.name}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          <ModalHobbySearch
+            onAddHobby={handleAddHobby}
+            selectedHobbies={selectedHobbies}
+            onClose={() => setShowModal(false)}
+          />
         )}
       </div>
     </div>
