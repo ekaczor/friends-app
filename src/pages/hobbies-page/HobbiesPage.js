@@ -4,8 +4,10 @@ import HobbyCard from "./HobbyCard";
 import Hobbies from "./Hobbies";
 import "./hobby_style.css";
 import ModalHobbySearch from "./ModalHobbySearch";
+import HobbyNav from "../../components/HobbyNav";
 
 const HobbiesPage = () => {
+  const [selectedHobby, setSelectedHobby] = useState(null);
   const [selectedHobbies, setSelectedHobbies] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
@@ -14,6 +16,10 @@ const HobbiesPage = () => {
       setSelectedHobbies([...selectedHobbies, hobby]);
     }
     setShowModal(false);
+  };
+
+  const openHobbyPage = (hobby) => {
+    setSelectedHobby(hobby);
   };
 
   const sortedHobbies = selectedHobbies.slice().sort((a, b) => a.name.localeCompare(b.name));
@@ -30,10 +36,20 @@ const HobbiesPage = () => {
             Add new
           </button>
           {sortedHobbies.map((hobby) => (
-            <HobbyCard key={hobby.id} hobby={hobby} />
+            <HobbyCard key={hobby.id} hobby={hobby} onClick={openHobbyPage} />
           ))}
         </div>
-        <div className="hobby-info">Hobby info</div>
+        <div className="hobby-info">
+          {selectedHobby ? (
+            <div>
+            <HobbyNav/>
+              <h3>{selectedHobby.name}</h3>
+              
+            </div>
+          ) : (
+            <p>Select a hobby to view details</p>
+          )}
+        </div>
         {showModal && (
           <ModalHobbySearch
             onAddHobby={handleAddHobby}
