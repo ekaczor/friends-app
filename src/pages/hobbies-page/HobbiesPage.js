@@ -5,11 +5,15 @@ import Hobbies from "./Hobbies";
 import "./hobby_style.css";
 import ModalHobbySearch from "./ModalHobbySearch";
 import HobbyNav from "../../components/HobbyNav";
+import {getFriendsForHobby} from "./MockData";
 
 const HobbiesPage = () => {
   const [selectedHobby, setSelectedHobby] = useState(null);
   const [selectedHobbies, setSelectedHobbies] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [hobbyFriends, setHobbyFriends] = useState([]);
+  const [selectedNav, setSelectedNav] = useState("friends"); 
+
 
   const handleAddHobby = (hobby) => {
     if (!selectedHobbies.includes(hobby)) {
@@ -18,11 +22,14 @@ const HobbiesPage = () => {
     setShowModal(false);
   };
 
-  const openHobbyPage = (hobby) => {
-    setSelectedHobby(hobby);
-  };
 
   const sortedHobbies = selectedHobbies.slice().sort((a, b) => a.name.localeCompare(b.name));
+
+  const openHobbyPage = (hobby) => {
+    setSelectedHobby(hobby);
+    setHobbyFriends(getFriendsForHobby(hobby)); 
+  };
+  
 
   return (
     <div className="hobby-body">
@@ -41,10 +48,16 @@ const HobbiesPage = () => {
         </div>
         <div className="hobby-info">
           {selectedHobby ? (
-            <div>
-            <HobbyNav/>
+            <div className="HobbyFriends">
+            <HobbyNav selectedNav={selectedNav} setSelectedNav={setSelectedNav} hobbyFriends={hobbyFriends} />
               <h3>{selectedHobby.name}</h3>
-              
+              {selectedNav === "friends" && (
+        <div className="friendsList">
+          {hobbyFriends.map((friend) => (
+            <div key={friend.id}>{friend.name}</div>
+          ))}
+        </div>
+      )}
             </div>
           ) : (
             <p>Select a hobby to view details</p>

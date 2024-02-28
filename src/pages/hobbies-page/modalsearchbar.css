@@ -1,38 +1,37 @@
 .title {
-    color: rgb(79, 31, 31);
-    text-align: center;
-  }
+  color: rgb(79, 31, 31);
+  text-align: center;
+}
 
-  .wholeSearch {
-    display: flex;
+.wholeSearch {
+  display: flex;
   align-items: center;
   margin-top: 40px;
-  }
-  
-  .searchBody {
-    font-size: large;
-    border-color: rgb(79, 31, 31);
-    border-width: 3px;
-    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.3);
-    margin-left: 2px;
-    flex: 1;
-  }
-  
-  .searchButton {
-    font-size: large;
-    font-weight: bold;
-    color: rgb(79, 31, 31);
-    border-color: rgb(79, 31, 31);
-    border-width: 3px;
-    background-color: rgb(216, 87, 87);
-    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
-    margin: 2px;
-  }
-  
-  .searchButton:hover {
-    background-color: rgba(255, 58, 18, 0.429);
-    cursor: pointer;
-    transform: scale(1.1);
-  }
-  
+}
+
+.searchBody {
+  font-size: large;
+  border-color: rgb(79, 31, 31);
+  border-width: 3px;
+  box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-left: 2px;
+  flex: 1;
+}
+
+.searchButton {
+  font-size: large;
+  font-weight: bold;
+  color: rgb(79, 31, 31);
+  border-color: rgb(79, 31, 31);
+  border-width: 3px;
+  background-color: rgb(216, 87, 87);
+  box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  margin: 2px;
+}
+
+.searchButton:hover {
+  background-color: rgba(255, 58, 18, 0.429);
+  cursor: pointer;
+  transform: scale(1.1);
+}

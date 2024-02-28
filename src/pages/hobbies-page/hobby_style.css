@@ -31,6 +31,7 @@
   font-weight: bold;
   text-align: center;
   font-size: x-large;
+  width: 100%;
   /* position: absolute; */
   
 }
@@ -106,6 +107,23 @@
   box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.3);
   color: white;
   cursor: pointer;
+}
+
+.HobbyFriends{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.friendsList {
+  background-color: white;
+  box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.3);
+  height: 60vh;
+  width: 90%;
+  max-width: 1000px;
+  justify-content: center;
+  overflow: auto;
 }
 
 .exit {
